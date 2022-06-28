@@ -1,0 +1,83 @@
+/*
+   ==========================================================================
+   Article list component.
+   ==========================================================================
+*/
+
+/* Article lists.
+   ========================================================================== */
+$article-list-item-margin: 0 0 1rem 0 !default;
+
+.article-list {
+
+    /* Each article block.
+       ========================================================================== */
+    article {
+        margin: $article-list-item-margin;
+    }
+
+    /* Pagination block.
+       ========================================================================== */
+    .pagination {
+        margin-top: 2em;
+        text-align: center;
+
+        &> div {
+            font-size: 80%;
+            margin-bottom: 1em;
+        }
+
+        nav {
+
+            a, a:link, a:visited, a:hover, a:active {
+                border-bottom: none;
+                text-decoration: none;
+            }
+
+            .left, .right {
+                width: 20%;
+                display: inline-block;
+            }
+
+            .left {
+                float: left;
+            }
+
+            .right {
+                float: right;
+            }
+
+            .middle {
+                width: 60%;
+                display: inline-block;
+                
+                span {
+                    padding: none;
+
+                    span {
+                        padding: 0.25em;
+                        border: 0.5px solid;
+                        min-width: 2em;
+                        border-color: var(--col-border);
+                        display: inline-block;
+
+                        &:hover {
+                            background-color: var(--col-secondary-text-offset);
+                            color: var(--col-opposite-text);
+                        }
+                
+                        &.current {
+                        
+                            background-color: var(--col-secondary-bg);
+                        
+                            &:hover {
+                                background-color: none;
+                                color: var(--col-secondary-text);
+                            }   
+                        }            
+                    }
+                }
+            }
+        }
+    }
+}

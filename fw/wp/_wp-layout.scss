@@ -1,0 +1,64 @@
+/*
+   ==========================================================================
+   Wordpress Layout settings.
+   ==========================================================================
+*/
+
+/* Breakpoints.
+   ========================================================================== */
+@import '../private/breakpoints.scss';
+
+/* Layout basics.
+   ========================================================================== */
+
+$layout-header-padding: 0 1rem 0 1rem !default;
+$layout-wrapper-padding: 0.25rem 1.5rem 0.25rem 1.5rem !default;
+$layout-main-margin: 0 auto !default;
+$layout-main-maxwidth: 40rem !default;
+$layout-footer-padding: 0.5rem 1rem 0.5rem 1rem !default;
+$layout-footer-margin: 2rem 0 0 0 !default;
+
+/* Header.
+========================================================================== */
+
+.site > header {
+    padding: $layout-header-padding;
+    @include clearfix;
+}
+
+/* Wrapper.
+========================================================================== */
+
+.site > .wrapper {
+    padding: $layout-wrapper-padding;
+
+    /* Main content.
+    ========================================================================== */
+
+    main {
+        margin: $layout-main-margin;
+        max-width: $layout-main-maxwidth;
+    }
+}
+
+/* Footer.
+========================================================================== */
+
+.site > footer {
+    margin: $layout-footer-margin;
+    padding: $layout-footer-padding;
+}
+
+/* Full width pages.
+========================================================================== */
+
+$wp-layout-fullwidth-main-maxwidth: 60em !default;
+
+.page-template-page_fullwidth {
+    .site > .wrapper {
+        main {
+            max-width: $wp-layout-fullwidth-main-maxwidth;
+        }
+    }
+}
+

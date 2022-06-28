@@ -1,0 +1,45 @@
+/*
+   ==========================================================================
+   Basic theme (black & white, mainly).
+   ==========================================================================
+*/
+
+// Light.
+$theme-col-body-bg-light: $col-white-80 !default;
+$theme-col-body-bg-animation-light: none !default;
+$theme-col-body-text-light: $col-black !default;
+$theme-col-body-text-dimmer-light: lighten($theme-col-body-text-light, 20%) !default;
+$theme-col-secondary-bg-light: $col-white-40 !default;
+$theme-col-secondary-text-light: $col-black !default;
+$theme-col-secondary-text-offset-light: $col-black-50 !default;
+$theme-col-tertiary-bg-light: #265d73 !default;                
+$theme-col-opposite-text-light: $col-white !default;
+$theme-col-link-text-light: $theme-col-secondary-text-light !default;
+$theme-col-link-text-hover-light: $theme-col-secondary-text-light !default;
+$theme-col-muted-light: $col-light-gray !default;
+$theme-col-code-text-light: $col-light-green !default;
+$theme-col-code-bg-light: $col-dark-green !default;
+$theme-col-border-light: $col-black-40 !default;
+$theme-col-header-bg-light: $col-white-80 !default;
+$theme-col-footer-bg-light: $col-white-80 !default;
+
+// Dark.
+$theme-col-body-bg-dark: $col-black-80 !default;
+$theme-col-body-bg-animation-dark: none !default;
+$theme-col-body-text-dark: $col-white-80 !default;
+$theme-col-body-text-dimmer-dark: darken($theme-col-body-text-dark, 20%) !default;
+$theme-col-secondary-bg-dark: $col-black-40 !default;
+$theme-col-secondary-text-dark: $col-white-80 !default;
+$theme-col-secondary-text-offset-dark: $col-white-50 !default;
+$theme-col-tertiary-bg-dark: #265d73 !default;                
+$theme-col-opposite-text-dark: $col-black !default;
+$theme-col-link-text-dark: $theme-col-secondary-text-dark !default;
+$theme-col-link-text-hover-dark: $theme-col-secondary-text-dark !default;
+$theme-col-muted-dark: $col-black-40 !default;
+$theme-col-code-text-dark: $col-light-green !default;
+$theme-col-code-bg-dark: $col-dark-green !default;
+$theme-col-border-dark: $col-white-40 !default;
+$theme-col-header-bg-dark: $col-black-80 !default;
+$theme-col-footer-bg-dark: $col-black-80 !default;
+
+

@@ -1,0 +1,86 @@
+/*
+   ==========================================================================
+   Theme colour settings (supporting light and dark mode).
+   ==========================================================================
+*/
+
+/* Transfer to CSS variables.
+   ========================================================================== */
+
+@mixin theme-light {
+    --col-body-bg: #{$theme-col-body-bg-light};
+    --col-body-text: #{$theme-col-body-text-light};
+    --col-body-text-dimmer: #{$theme-col-body-text-dimmer-light};
+    --col-secondary-bg: #{$theme-col-secondary-bg-light};
+    --col-secondary-bg-offset: #{$theme-col-secondary-bg-offset-light};
+    --col-secondary-text: #{$theme-col-secondary-text-light};
+    --col-secondary-text-offset: #{$theme-col-secondary-text-offset-light};
+    --col-tertiary-bg: #{$theme-col-tertiary-bg-light};
+    --col-opposite-text: #{$theme-col-opposite-text-light};
+    --col-link-text: #{$theme-col-link-text-light};
+    --col-link-text-hover: #{$theme-col-link-text-hover-light};
+    --col-muted: #{$theme-col-muted-light};
+    --col-code-text: #{$theme-col-code-text-light};
+    --col-code-bg: #{$theme-col-code-bg-light};
+    --col-border: #{$theme-col-border-light};
+    --col-header-bg: #{$theme-col-header-bg-light};
+    --col-footer-bg: #{$theme-col-footer-bg-light};
+}
+
+@mixin theme-dark {
+    --col-body-bg: #{$theme-col-body-bg-dark};
+    --col-body-text: #{$theme-col-body-text-dark};
+    --col-body-text-dimmer: #{$theme-col-body-text-dimmer-dark};
+    --col-secondary-bg: #{$theme-col-secondary-bg-dark};
+    --col-secondary-bg-offset: #{$theme-col-secondary-bg-offset-dark};
+    --col-secondary-text: #{$theme-col-secondary-text-dark};
+    --col-secondary-text-offset: #{$theme-col-secondary-text-offset-dark};
+    --col-tertiary-bg: #{$theme-col-tertiary-bg-dark};
+    --col-opposite-text: #{$theme-col-opposite-text-dark};
+    --col-link-text: #{$theme-col-link-text-dark};
+    --col-link-text-hover: #{$theme-col-link-text-hover-dark};
+    --col-muted: #{$theme-col-muted-dark};
+    --col-code-text: #{$theme-col-code-text-dark};
+    --col-code-bg: #{$theme-col-code-bg-dark};
+    --col-border: #{$theme-col-border-dark};
+    --col-header-bg: #{$theme-col-header-bg-dark};
+    --col-footer-bg: #{$theme-col-footer-bg-dark};
+}
+
+
+/* Theme switcher.
+   ========================================================================== */
+
+$theme-force: false !default;
+
+@if $theme-force {
+
+    :root {
+        @if $theme-force == light {
+            @include theme-light;
+        } @else {
+            @include theme-dark;
+        }
+    }
+
+} @else {
+
+    :root, :root.light {
+        @include theme-light;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            @include theme-dark;
+        }
+    }
+
+    :root.dark {
+        @include theme-dark;
+    }
+}
+
+/* Elements.
+   ========================================================================== */
+
+@import 'private/_theme-elements.scss';

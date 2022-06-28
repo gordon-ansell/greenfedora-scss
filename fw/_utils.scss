@@ -1,0 +1,79 @@
+/*
+   ==========================================================================
+   Utility classes.
+   ==========================================================================
+*/
+
+/* Floats.
+   ========================================================================== */
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.centre {
+    float: none;
+    margin: 0 auto;
+}
+
+/* Max width percentages 1 - 100.
+   ========================================================================== */
+
+@for $i from 1 through  100 {
+    .s#{$i} { max-width: #{$i * 1%} !important; }
+}
+
+/* Stretch full screen width.
+   ========================================================================== */
+
+@mixin full-vw {
+    width: 100vw;
+    max-width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    @include clearfix();
+    margin-bottom: 2.5em;
+}
+
+@mixin full-vw-nomb {
+    width: 100vw;
+    max-width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    @include clearfix();
+    margin-bottom: 0;
+}
+
+@mixin clear-full-vw {
+    width: auto;
+    max-width: none;
+    position: relative;
+    left: 0;
+    right: 0;
+    margin-left: 0;
+    margin-right: 0;
+    @include clearfix();
+    margin-bottom: 0;
+}
+
+/* Remove padding and margin.
+   ========================================================================== */
+.no-space {
+    padding: 0;
+    margin: 0;
+}
+
+.no-margin-bottom {
+    margin-bottom: 0;
+}
+

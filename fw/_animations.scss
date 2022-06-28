@@ -1,0 +1,48 @@
+/*
+   ==========================================================================
+   Animations.
+   ==========================================================================
+*/
+
+/* Generic keyframes.
+   ========================================================================== */
+
+@keyframes kf-transform-minus-100-to-0 {
+    0% { 
+        transform: translateX(-100vw); 
+    }
+    100% { 
+        transform: translateX(0);      
+    }
+}
+
+@keyframes kf-opacity {
+    0% {
+        opacity:0;
+    }
+    100% {
+        opacity:1;
+    }
+}
+
+/* Slide in from the left.
+   ========================================================================== */
+
+@mixin anim-slide-in-from-left($delay: 1s) {
+    animation: kf-transform-minus-100-to-0 $delay forwards;
+}
+
+.anim-slide-in-from-left {
+    @include anim-slide-in-from-left();
+}
+
+/* Fade in.
+   ========================================================================== */
+
+@mixin anim-fade-in($delay: 3s) {
+    animation: kf-opacity linear $delay;
+}
+
+.anim-fade-in {
+    @include anim-fade-in();
+}

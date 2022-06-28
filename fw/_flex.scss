@@ -1,0 +1,91 @@
+/*
+   ==========================================================================
+   Flexbox settings.
+   ==========================================================================
+*/
+
+/* Alignments.
+   ========================================================================== */
+
+/**
+ * Vertical centre.
+ */
+.flex-vertical-centre > div {
+    display: flex;
+    flex-direction: column;
+    //align-items: center;
+    justify-content: center;
+}
+
+// Horizontal left for above when not at large breakpoint.
+@include bp-notlarge() {
+    .flex-vertical-centre > div.flex-vertical-left-nl {
+        //align-items: flex-start;
+        justify-content: left;
+    }
+}
+
+/**
+ * Horizontal centre.
+ */
+.flex-horizontal-centre > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    //justify-content: center;
+}
+
+// Horizontal left for above when not at large breakpoint.
+@include bp-notlarge() {
+    .flex-horizontal-centre > div.flex-horizontal-left-nl {
+        align-items: flex-start;
+        //justify-content: left;
+    }
+}
+
+/* Sizing.
+   ========================================================================== */
+
+/**
+ * Use the full screen.
+ */
+.flex-full {
+    @include full-vw;
+}
+
+/**
+ * Full screen, 2 columns, aspect ratio 2/1.
+ */
+.flex-full-50-ar-2-1 {
+    @include full-vw-nomb;
+    & > div {
+        width: 50%;
+        aspect-ratio: 2/1;
+    }
+}
+
+@include bp-notlarge {
+    .flex-full-50-ar-2-1 {
+        @include full-vw-nomb;
+        & > div {
+            width: 100%;
+            aspect-ratio: 3/1;
+        }
+    }
+}
+
+/**
+ * Remove spacing from inner containers.
+ */
+.flex-inner-no-space > div {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Bordered.
+   ========================================================================== */
+.flex-bordered-items > div {
+    border: 0.5px solid var(--col-border);
+}
+
+

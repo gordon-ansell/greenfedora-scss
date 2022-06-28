@@ -1,0 +1,78 @@
+/*
+   ==========================================================================
+   Type scale settings (standard).
+   ==========================================================================
+*/
+
+/* Mixins.
+   ========================================================================== */
+
+$typ-font-size-incr: 0.1rem !default;
+$typ-font-size-incrs-big: 12 !default;
+$typ-font-size-incrs-small: 6 !default;
+
+@mixin fsize($num: 1) {
+    font-size: #{$typ-base-font-size + (($num - 1) * $typ-font-size-incr)};
+}
+
+@mixin -fsize($num: 1) {
+    font-size: #{$typ-base-font-size - ($num * $typ-font-size-incr)};
+}
+
+
+@if $type-scale-method != fluid {
+
+
+/* Base font properties.
+   ========================================================================== */
+
+$typ-base-font-size: 1.25rem !default;     // x 16 for pixel equivalent.
+
+:root {
+    font-size: $typ-base-font-size;
+}
+
+/* Create additional font sizes.
+   ========================================================================== */
+
+@for $i from 1 to $typ-font-size-incrs-big + 1 {
+    .fsize#{$i} { font-size: #{$typ-base-font-size + (($i - 1) * $typ-font-size-incr)}; }
+}
+
+@for $i from 1 to $typ-font-size-incrs-small + 1 {
+    .fsize-#{$i} { font-size: #{$typ-base-font-size - ($i * $typ-font-size-incr)}; }
+}
+
+/* Heading font properties.
+   ========================================================================== */
+
+$typ-heading-font-size-generator-map: (1: 12, 2: 8, 3: 6, 4: 4, 5: 3, 6: 1) !default;
+$typ-heading-embedded-font-size-generator-map: (1: 8, 2: 6, 3: 4, 4: 3, 5: 2, 6: 1) !default;
+
+@each $hnum, $hval in $typ-heading-font-size-generator-map {
+    h#{$hnum} {@include fsize($hval);}
+}
+
+@each $hnum, $hval in $typ-heading-embedded-font-size-generator-map {
+    .embedded-headers h#{$hnum} {@include fsize($hval);}
+}
+
+/* Small font properties.
+   ========================================================================== */
+
+$typ-small-font-level: 2 !default;
+
+.small {
+    @include -fsize($typ-small-font-level);
+}
+
+/* Site footer.
+   ========================================================================== */
+
+$typ-footer-font-size: small;
+
+body > footer {
+    font-size: $typ-footer-font-size;
+}
+
+} // @if

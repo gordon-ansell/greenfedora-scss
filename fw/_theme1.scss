@@ -1,0 +1,33 @@
+/*
+   ==========================================================================
+   Theme colour settings (supporting one mode only).
+   ==========================================================================
+*/
+
+/* Transfer to CSS variables.
+   ========================================================================== */
+
+:root {
+    --col-body-bg: #{$theme-col-body-bg};
+    --col-body-text: #{$theme-col-body-text};
+    --col-body-text-dimmer: #{$theme-col-body-text-dimmer};
+    --col-secondary-bg: #{$theme-col-secondary-bg};
+    --col-secondary-bg-offset: #{$theme-col-secondary-bg-offset};
+    --col-secondary-text: #{$theme-col-secondary-text};
+    --col-secondary-text-offset: #{$theme-col-secondary-text-offset};
+    --col-tertiary-bg: #{$theme-col-tertiary-bg};
+    --col-opposite-text: #{$theme-col-opposite-text};
+    --col-link-text: #{$theme-col-link-text};
+    --col-link-text-hover: #{$theme-col-link-text-hover};
+    --col-muted: #{$theme-col-muted};
+    --col-code-text: #{$theme-col-code-text};
+    --col-code-bg: #{$theme-col-code-bg};
+    --col-border: #{$theme-col-border};
+    --col-header-bg: #{$theme-col-header-bg};
+    --col-footer-bg: #{$theme-col-footer-bg};
+}
+
+/* Elements.
+   ========================================================================== */
+
+@import 'private/_theme-elements.scss';

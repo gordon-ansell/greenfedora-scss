@@ -1,0 +1,156 @@
+// ==============================================================
+// Responsive top menu.
+// ==============================================================
+
+$menu-responsive-bp: 48em !default;
+
+$menu-responsive-bg-col: inherit !default;
+$menu-responsive-font-family: $typ-base-font-family !default;
+
+$menu-responsive-icon-padding: 28px 20px !default;
+$menu-responsive-icon-width: 18px !default;
+$menu-responsive-icon-height: 2px !default;
+$menu-responsive-icon-transition: .2s ease-out !default;
+
+$menu-responsive-small-font-size: 100% !default;
+$menu-responsive-small-item-padding: 20px 20px !default;
+$menu-responsive-small-max-height: 5000px !default;
+
+$menu-responsive-big-font-size: 80% !default;
+$menu-responsive-big-item-padding: 15px 20px !default;
+$menu-responsive-big-item-border-style: none solid none none !default;
+$menu-responsive-big-item-border-width: 0 1px 0 0 !default;
+
+.menu-responsive {
+    display: inline;
+
+    input {
+        display: none;
+
+        &:checked ~ ul,
+        &:checked ~ div > ul {
+            max-height: $menu-responsive-small-max-height;
+        }
+  
+        &:checked ~ label .icon {
+            background: transparent;
+        }
+  
+        &:checked ~ label .icon:before {
+            transform: rotate(-45deg);
+        }
+  
+        &:checked ~ label .icon:after {
+            transform: rotate(45deg);
+        }
+  
+        &:checked ~ label:not(.steps) .icon:before,
+        &:checked ~ label:not(.steps) .icon:after {
+            top: 0;
+        }
+    
+        &:hover {
+            background-color: var(--col-muted);
+        }
+    }
+
+    label {
+        cursor: pointer;
+        float: right;
+        padding: $menu-responsive-icon-padding;
+        position: relative;
+        user-select: none;
+    }
+
+    .icon {
+        display: block;
+        height: $menu-responsive-icon-height;
+        position: relative;
+        transition: background $menu-responsive-icon-transition;
+        width: $menu-responsive-icon-width;
+        background: var(--col-secondary-text-offset);       // The stripes on the hamburger menu.
+
+        &:before,
+        &:after {
+            content: '';
+            display: block;
+            height: 100%;
+            position: absolute;
+            transition: all $menu-responsive-icon-transition;
+            width: 100%;
+            background: var(--col-secondary-text-offset);       // The stripes on the hamburger menu.
+        }
+  
+        &:before {
+            top: 5px;
+        }
+  
+        &:after {
+            top: -5px;
+        }
+    }
+
+    ul,
+    div > ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        overflow: hidden;
+
+        clear: both;
+        max-height: 0;
+        transition: max-height $menu-responsive-icon-transition;
+
+        font-family: $menu-responsive-font-family;
+        font-size: $menu-responsive-small-font-size;
+
+        background-color: $menu-responsive-bg-col;
+    }
+
+    a {
+        display: block;
+        padding: $menu-responsive-small-item-padding;
+        text-decoration: none;
+        border-color: var(--col-muted);
+
+        &, &:link, &:visited, &:hover, &:active {
+            border-bottom: none;
+        }
+
+        &:hover {
+            background-color: var(--col-muted);
+        }
+    }
+
+
+    /* Breakpoint. */
+    @include bp-min($menu-responsive-bp) {
+        float: right;
+
+        label {
+            display: none;
+        }
+
+        ul,
+        div > ul {
+            clear: none;
+            float: right;
+            max-height: none;
+            font-size: $menu-responsive-big-font-size;
+        }
+
+        li {
+            float: left;
+
+            &:last-of-type a {
+                border: none;
+            }
+        }
+
+        a {
+            padding: $menu-responsive-big-item-padding;
+            border-style: $menu-responsive-big-item-border-style;
+            border-width: $menu-responsive-big-item-border-width;
+        }
+    }
+}

@@ -1,0 +1,36 @@
+/*
+   ==========================================================================
+   Wordpress block editor settings.
+   ==========================================================================
+*/
+
+/* Standards.
+   ========================================================================== */
+
+/**
+ * Enforce no wrapping and let the break (below) reorder.
+ */
+.wp-block-columns {
+    flex-wrap: nowrap;
+}
+
+/**
+ * Make sure we break at the right place.
+ */
+@include bp-max($layout-bpl) {
+    .wp-block-columns:not(.is-not-stacked-on-mobile) {
+        flex-direction: column;
+    }
+}
+
+/* Max width percentages 1 - 100 for covers.
+   ========================================================================== */
+
+@for $i from 1 through  100 {
+    .s#{$i}ha img { 
+        max-width: #{$i * 1%} !important; 
+        height: auto !important;
+        margin: auto !important;
+    }
+}
+

@@ -1,0 +1,53 @@
+/*
+   ==========================================================================
+   Theme colour settings for elements.
+   ==========================================================================
+*/
+
+body {
+    background: var(--col-body-bg);
+    color: var(--col-body-text);
+}
+
+body > header {
+    background: var(--col-header-bg);
+}
+
+body > footer {
+    background: var(--col-footer-bg);
+}
+
+a, .link { 
+    color: var(--col-link-text);
+}
+
+a:link, .link:link, a:visited, .link:visited { 
+    color: var(--col-link-text);
+}
+
+a:hover, .link:hover { 
+    color: var(--col-link-text-hover);
+}
+
+pre,
+code {
+    background-color: var(--col-code-bg);
+    color: var(--col-code-text);
+    border-color: var(--col-secondary-text);
+}
+
+blockquote {
+    border-color: var(--col-secondary-text);
+}
+
+/* Quick selectors.
+   ========================================================================== */
+
+.theme-secondary-text {
+    color: var(--col-secondary-text) !important;
+}
+
+
+.theme-secondary-bg {
+    background-color: var(--col-secondary-bg) !important;
+}

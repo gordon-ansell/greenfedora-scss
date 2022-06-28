@@ -1,0 +1,79 @@
+/*
+   ==========================================================================
+   Breakpoint settings.
+   ==========================================================================
+*/
+
+/* Good old clearfix.
+   ========================================================================== */
+
+@mixin clearfix() {
+    &:before, &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+    *zoom: 1;
+}
+
+.cf {
+    @include clearfix;
+}
+
+/* Breakpoints, em is the most consistent unit.
+   ========================================================================== */
+
+                                    // Small is < $bpm;
+$layout-bpm: 23em !default;         // Medium.
+$layout-bpl: 48em !default;         // Large.    
+
+@mixin bp-notsmall($med: screen) {
+    @media #{$med} and (min-width: $layout-bpm) {
+        @content;
+    }
+}
+
+@mixin bp-small($med: screen) {
+    @media #{$med} and (max-width: $layout-bpm) {
+        @content;
+    }
+}
+
+@mixin bp-medium($med: screen) {
+    @media #{$med} and (min-width: $layout-bpm) and (max-width: $layout-bpl) {
+        @content;
+    }
+}
+
+@mixin bp-notlarge($med: screen) {
+    @media #{$med} and (max-width: $layout-bpl) {
+        @content;
+    }
+}
+
+@mixin bp-large($med: screen) {
+    @media #{$med} and (min-width: $layout-bpl) {
+        @content;
+    }
+}
+
+@mixin bp-min($size: $layout-bpl, $med: screen) {
+    @media #{$med} and (min-width: $size) {
+        @content;
+    }
+}
+
+@mixin bp-max($size: $layout-bps, $med: screen) {
+    @media #{$med} and (max-width: $size) {
+        @content;
+    }
+}
+
+.bp-hide-not-large {
+    @include bp-notlarge() {
+        display: none;
+    }
+} 
+

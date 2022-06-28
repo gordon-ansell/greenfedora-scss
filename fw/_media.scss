@@ -1,0 +1,182 @@
+/*
+   ==========================================================================
+   Media settings (images, videos).
+   ==========================================================================
+*/
+
+/* Base image settings.
+   ========================================================================== */
+
+img:not(.fixed) {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+}
+
+img.fixed {
+    height: auto;
+}
+
+// Lazysizes.
+img[data-sizes="auto"]:not(.fixed) { 
+    display: block; 
+    width: 100%; 
+}
+
+img[data-sizes="auto"].fixed { 
+    display: block; 
+    height: auto;
+}
+
+/* More complicated image settings for responsiveness.
+   ========================================================================== */
+
+$media-img-margin-vertical: 0.5em !default;
+$media-img-margin-top: 0.25em !default;
+$media-img-margin-bottom: 0.25em !default;
+$media-img-margin-bottom-centred: 1em !default;
+
+$media-img-figcaption-font-size: 70% !default;
+$media-img-figcaption-font-style: italic !default;
+
+$media-img-transform-scale: 3 !default;
+
+
+img:not(.fixed), figure:not(.fixed) {
+
+    margin-top: $media-img-margin-top;
+    margin-bottom: $media-img-margin-bottom;
+
+    &.left {
+        float: left;
+        margin-right: $media-img-margin-vertical;
+    }
+    
+    &.right {
+        float: right;
+        margin-left: $media-img-margin-vertical;
+    }
+
+    &.centre {
+        display: block;
+        text-align: center;
+        margin: 0 auto;
+        margin-bottom: $media-img-margin-bottom-centred;
+    }
+    
+    // Full width.
+    &.full {
+        @include full-vw;
+    
+        img {
+            width: 100%;
+        }
+    }
+
+    // No float.
+    &.nf {
+        float: none;
+    }
+
+    &.link, 
+    &.link:link, 
+    &.link:visited, 
+    &.link:hover, 
+    &.link:active {
+        border-bottom: none;
+        text-decoration: none;
+    }
+}
+
+/*
+@media(hover: hover) and (pointer: fine) {
+
+    img.transform {
+        transition:transform 0.25s ease;
+
+        &:hover {
+            transform:scale($media-img-transform-scale);
+        }
+    }
+
+    figure.transform {
+        img {
+            z-index: 9998;
+            transition:transform 0.25s ease;
+
+            &:hover {
+                transform:scale($media-img-transform-scale);
+            }
+        }
+    }
+}
+*/
+
+figure {
+    margin: 0;
+    figcaption {
+        font-size: $media-img-figcaption-font-size;
+        font-style: $media-img-figcaption-font-style;
+        display: inline-block;
+        text-align: center;
+        width: 100%;
+    }
+}
+
+/* Videos.
+   ========================================================================== */
+
+figure.videolink {
+    margin: 0 auto;
+    text-align: center;
+
+    figcaption {
+        font-size: $media-img-figcaption-font-size;
+        font-style: $media-img-figcaption-font-style;
+        display: block;
+        text-align: center;
+        width: 100%;
+    }
+}
+
+/* This is for fluid media that is embedded from third party sites like youtube, vimeo etc.
+ * Wrap the outer element in aspect-ratio and then extend it with the desired ratio i.e
+ * Make sure there are no height and width attributes on the embedded media.
+ * Adapted from: https://github.com/suitcss/components-flex-embed
+ *
+ * Example:
+ *
+ * <div class="aspect-ratio aspect-ratio--16x9">
+ *  <iframe class="aspect-ratio--object"></iframe>
+ * </div>
+ *
+ * */
+.aspect-ratio { height: 0; position: relative; }
+.aspect-ratio--16x9 { padding-bottom: 56.25%; }
+.aspect-ratio--9x16 { padding-bottom: 177.77%; }
+.aspect-ratio--4x5 { padding-bottom: 125%; }
+.aspect-ratio--4x3 { padding-bottom: 75%; }
+.aspect-ratio--3x4 { padding-bottom: 133.33%; }
+.aspect-ratio--6x4 { padding-bottom: 66.6%; }
+.aspect-ratio--4x6 { padding-bottom: 150%; }
+.aspect-ratio--8x5 { padding-bottom: 62.5%; }
+.aspect-ratio--5x8 { padding-bottom: 160%; }
+.aspect-ratio--7x5 { padding-bottom: 71.42%; }
+.aspect-ratio--5x7 { padding-bottom: 140%; }
+.aspect-ratio--1x1 { padding-bottom: 100%; }
+.aspect-ratio--object { 
+    position: absolute; 
+    top: 0; 
+    right: 0; 
+    bottom: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    z-index: 100; 
+    background-size: cover !important; 
+}
+
+
+
+
+

@@ -1,0 +1,163 @@
+/*
+   ==========================================================================
+   Typography settings.
+   ==========================================================================
+*/
+$typ-scale-method: standard !default;
+
+@import 'private/_typescale-fluid.scss';
+@import 'private/_typescale-standard.scss';
+
+/* Base font properties.
+   ========================================================================== */
+
+$typ-base-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$typ-base-line-height: 1.5 !default;
+$typ-base-font-weight: 300 !default;
+
+:root {
+    font-family: $typ-base-font-family;
+    line-height: $typ-base-line-height;
+    font-weight: $typ-base-font-weight;
+}
+
+
+/* Heading font properties.
+   ========================================================================== */
+
+$typ-heading-font-family: "Noe Display", Georgia, Times, serif !default;
+$typ-heading-line-height: 1.25 !default;
+$typ-heading-font-weight: 400 !default;
+$typ-heading-margin: 0.5rem 0 0.5rem 0 !default;
+$typ-heading-padding: 0 !default;
+$typ-heading-h6-font-variant: small-caps;
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: $typ-heading-line-height;
+    font-family: $typ-heading-font-family;
+    font-weight: $typ-heading-font-weight;
+    margin: $typ-heading-margin;
+    padding: $typ-heading-padding;
+}
+
+h6 {
+    font-variant: $typ-heading-h6-font-variant;
+}
+
+/* Strong font properties.
+   ========================================================================== */
+
+$typ-strong-font-weight: 600 !default;
+
+strong, b {
+    font-weight: $typ-strong-font-weight;
+}
+
+/* Link properties.
+   ========================================================================== */
+
+$typ-link-text-decoration: none !default;
+$typ-link-border: none !default;
+
+a, a:link, a:visited, a:hover, a:active {
+    text-decoration: $typ-link-text-decoration;
+    border: $typ-link-border;
+}
+
+
+/* Site footer.
+   ========================================================================== */
+
+$typ-footer-text-align: center;
+$typ-footer-border-top: 1px solid var(--col-secondary-text);
+
+body > footer {
+    text-align: $typ-footer-text-align;
+    border-top: $typ-footer-border-top;
+}
+
+
+/* Pre/code.
+   ========================================================================== */
+
+$typ-precode-font-size: 70% !default;
+$typ-precode-line-height: 1.5 !default;
+$typ-precode-font-family: "Fira Code", Menlo, Monaco, Consolas, "Andale Mono", "Courier New", monospace !default;
+$typ-precode-border: 1px solid !default;
+
+$typ-precode-code-padding: 1px 5px !default;
+$typ-precode-pre-padding: 8px 12px !default;
+
+pre,
+code {
+    font-family: $typ-precode-font-family;
+    line-height: $typ-precode-line-height;
+    border: $typ-precode-border;
+    border-radius: 3px;
+}
+
+code {
+    font-size: $typ-precode-font-size;
+    padding: $typ-precode-code-padding;
+}
+
+pre {
+    padding: $typ-precode-pre-padding;
+    overflow-x: auto;
+
+    > code {
+        border: 0;
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+@import 'private/highlight.scss';
+
+/* Blockquotes.
+   ========================================================================== */
+
+$typ-bq-width: 90% !default;
+$typ-bq-margin: 1em auto !default;
+$typ-bq-font-style: italic !default;
+$typ-bq-padding: 1em 3em 1em 3em !default;
+$typ-bq-border-left: 0.5em solid !default;
+$typ-bq-line-height: 1.4 !default;
+
+$typ-bq-before-font: Arial !default;
+$typ-bq-before-content: "\201C" !default;
+$typ-bq-before-font-size: 3em !default;
+
+blockquote {
+    width: $typ-bq-width;
+    margin: $typ-bq-margin;
+    font-style: $typ-bq-font-style;
+    padding: $typ-bq-padding;
+    border-left: $typ-bq-border-left;
+    line-height: $typ-bq-line-height;
+    position: relative;
+    z-index: -1;
+}
+  
+blockquote::before {
+    font-family: $typ-bq-before-font;
+    content: $typ-bq-before-content;
+    font-size: $typ-bq-before-font-size;
+    position: absolute;
+    left: 10px;
+    top:-10px;
+}
+  
+blockquote::after{
+    content: '';
+}
+
+/* Footnotes.
+   ========================================================================== */
+.footnote {
+    line-height: 1.1;
+}
+
+
+
+

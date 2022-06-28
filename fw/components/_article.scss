@@ -1,0 +1,172 @@
+/*
+   ==========================================================================
+   Article component.
+   ==========================================================================
+*/
+
+$article-readmore-img-width: 7rem !default;
+$article-readmore-img-height: 3rem !default;
+$article-readmore-float: right !default;
+
+$article-leader-border-width: 0.5px !default;
+$article-leader-border-style: solid !default;
+$article-leader-margin: 1em 0.5em 0.5em 0.5em !default;
+$article-leader-padding: 0 0.5em 0 0.5em !default;
+$article-leader-font-size: 115% !default;
+$article-leader-bg-col: var(--col-tertiary-bg) !default;
+$article-leader-font-weight: 325;
+
+$article-leader-image-float: right !default;
+$article-leader-image-margin: 1em 0 0 0.25em !default;
+$article-leader-image-max-width: 200px !default;
+$article-leader-image-max-height: 100px !default;
+
+$article-excerpt-image-max-width: 8rem !default;
+$article-excerpt-image-max-height: 8rem !default;
+$article-excerpt-image-padding: 0 0.5rem 0 0 !default;
+
+$article-content-margin: 0 0 1rem 0 !default;
+
+/* Article itself.
+   ========================================================================== */
+article {
+    
+    @include clearfix;
+
+    /* Leader.
+       ========================================================================== */
+
+    .leader {
+        border-width: $article-leader-border-width;
+        border-style: $article-leader-border-style;
+        border-radius: 0.25em;
+        margin: $article-leader-margin;
+        padding: $article-leader-padding;
+        font-size: $article-leader-font-size;
+        background-color: $article-leader-bg-col;
+        font-weight: $article-leader-font-weight;
+    
+        img {
+            float: $article-leader-image-float;
+            margin: $article-leader-image-margin;
+            max-width: $article-leader-image-max-width;
+            max-height: $article-leader-image-max-height;
+        }
+    }
+
+
+    /* Excerpts.
+       ========================================================================== */
+    .excerpt {
+        @extend .fsize-2 !optional;
+
+        img {
+            max-width: $article-excerpt-image-max-width;
+            max-height: $article-excerpt-image-max-height;
+            float: left;
+            padding: $article-excerpt-image-padding;
+        }
+
+        a.readmore {
+            float: $article-readmore-float;
+            //border-bottom: none;
+            //margin: 0;
+
+            img {
+                width: $article-readmore-img-width;
+                height: $article-readmore-img-height;
+            }
+        }
+    }
+
+    /* Content block.
+       ========================================================================== */
+    .e-content {
+        margin: $article-content-margin;
+        @include clearfix;
+    }
+
+    /* Citation block.
+       ========================================================================== */
+    .citation-block {
+        width: 90%;
+        margin: 0 auto;
+        @extend .fsize-3 !optional;
+        margin-bottom: 1rem;
+
+        h6 {
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    /* Tags block.
+       ========================================================================== */
+    section.tags {
+        @extend .fsize-4 !optional;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    /* Footnote block.
+       ========================================================================== */
+    .footnote {
+        line-height: 1.1;
+    }
+
+    /* Article footer.
+       ========================================================================== */
+    footer {
+        .socialshares {
+            margin: 0 auto;
+            text-align: center;
+            margin-bottom: 1rem;
+            .socialshare {
+                margin-right: 1rem;
+
+                img {
+                    width: 2rem;
+                }
+
+                &:last-of-type {
+                    margin-right: 0;
+                }
+            }
+        }
+
+        .contactme {
+            text-align: center;
+            @extend .fsize-4 !optional;
+            margin-bottom: 2rem;
+        }
+
+        .prevnext {
+            @extend .fsize-4 !optional;
+            span:first-of-type {
+                width: 50%;
+                float: left;
+            }
+            span:last-of-type {
+                width: 50%;
+                float: right;
+                text-align: right;
+            }
+        }
+    }
+
+}
+
+
+/* Related to articles.
+   ========================================================================== */
+
+$article-byline-margin: 0.75em 0 0.75em 0 !default;
+
+.breadcrumbs {
+    @extend .fsize-6 !optional;
+}
+
+.byline {
+    @extend .fsize-4 !optional;
+    margin: $article-byline-margin;
+}

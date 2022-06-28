@@ -1,0 +1,22 @@
+/*
+   ==========================================================================
+   Text separated with a big dot.
+   ==========================================================================
+*/
+
+$bigdot-col-bg: var(--col-secondary-text-offset) !default;
+$bigdot-height: 0.5em !default;
+$bigdot-width: 0.5em !default;
+$bigdot-margin: 0 0.5em 0.15em 0.5em !default;
+$bigdot-border-radius: 50% !default;
+
+.bigdot-separated {
+    .bigdot {        
+        height: $bigdot-height;
+        width: $bigdot-width;
+        margin: $bigdot-margin;
+        border-radius: $bigdot-border-radius;
+        display: inline-block;
+        background-color: $bigdot-col-bg;
+    }
+}

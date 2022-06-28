@@ -1,0 +1,26 @@
+/*
+   ==========================================================================
+   Basic theme (Dark).
+   ==========================================================================
+*/
+
+// Dark.
+$theme-col-body-bg: $col-black-80 !default;
+$theme-col-body-bg-animation: none !default;
+$theme-col-body-text: $col-white-80 !default;
+$theme-col-body-text-dimmer: darken($theme-col-body-text, 20%) !default;
+$theme-col-secondary-bg: $col-black-40 !default;
+$theme-col-secondary-text: $col-white-80 !default;
+$theme-col-secondary-text-offset: $col-white-50 !default;
+$theme-col-tertiary-bg-dark: #265d73 !default;                
+$theme-col-opposite-text: $col-black !default;
+$theme-col-link-text: $theme-col-secondary-text !default;
+$theme-col-link-text-hover: $theme-col-secondary-text !default;
+$theme-col-muted: $col-black-40 !default;
+$theme-col-code-text: $col-light-green !default;
+$theme-col-code-bg: $col-green !default;
+$theme-col-border: $col-white-40 !default;
+$theme-col-header-bg: $col-black-80 !default;
+$theme-col-footer-bg: $col-black-80 !default;
+
+

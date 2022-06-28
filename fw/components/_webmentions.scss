@@ -1,0 +1,101 @@
+// ==============================================================
+// Simple menu.
+// ==============================================================
+
+$article-wm-margin: 2rem 0 1rem 0 !default;
+
+$article-wm-item-font-size: 90% !default;
+$article-wm-item-width: 100% !default;
+$article-wm-item-margin: 0 0 1em 0 !default;
+$article-wm-item-border: solid 1px !default;
+$article-wm-item-border-col: var(--col-muted) !default;
+$article-wm-item-padding: 0.5em !default;
+
+$article-wm-item-meta-typeicon-width: 32px !default;
+$article-wm-item-meta-typeicon-height: 32px !default;
+$article-wm-item-meta-padding: 0 0 0 0 !default;
+$article-wm-item-meta-font-size: 80% !default;
+
+$article-wm-item-post-font-size: 80% !default;
+
+$article-wm-item-meta-font-style: italic !default;
+
+$article-wm-item-authorphoto-width: 48px !default;
+$article-wm-item-authorphoto-height: 48px !default;
+
+.webmentions {
+    margin: $article-wm-margin;
+
+    // List of webmentions.
+    ol {
+        list-style: none;
+
+        // Single webmention.
+        li {
+            width: $article-wm-item-width;
+            font-size: $article-wm-item-font-size;
+            margin: $article-wm-item-margin;
+            display: flex;
+            flex-direction: row;
+            border: $article-wm-item-border;
+            border-color: $article-wm-item-border-col;
+            padding: $article-wm-item-padding;
+
+            // Author photo.
+            .wm-authorphoto {
+                padding-right: 1em;
+            
+                img {
+                    width: $article-wm-item-authorphoto-width;
+                    height: $article-wm-item-authorphoto-height;
+                    min-width: $article-wm-item-authorphoto-width;
+                    min-height: $article-wm-item-authorphoto-height;
+                }
+            }        
+
+            // Main data.
+            .wm-data {
+                flex-grow: 1;
+
+                // Meta data (date etc.)
+                .wm-meta {
+                    font-style: $article-wm-item-meta-font-style;
+                    display: inline-block;
+                    padding: $article-wm-item-meta-padding;
+                    font-size: $article-wm-item-meta-font-size;
+                    
+                    .dt-published {
+                        color: var(--col-primary-text);
+                    }
+
+                    .wm-post {
+                        font-size: $article-wm-item-post-font-size;
+                        display: none;
+                    }
+                }
+            
+                // Content of webmention.
+                .p-content {
+                    display: inline-block;
+                }
+                        
+            }
+
+            // Type icon.
+            .wm-typeicon {
+                padding-left: 1em;
+
+                img {
+                    width: $article-wm-item-meta-typeicon-width;
+                    height: $article-wm-item-meta-typeicon-height;
+                    min-width: $article-wm-item-meta-typeicon-width;
+                    min-height: $article-wm-item-meta-typeicon-height;
+                }
+            
+            }
+                
+        }
+
+    }    
+        
+}

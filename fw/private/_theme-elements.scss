@@ -4,6 +4,8 @@
    ==========================================================================
 */
 
+$pre-code-colouring: true !default;
+
 body {
     background: var(--col-body-bg);
     color: var(--col-body-text);
@@ -29,11 +31,13 @@ a:hover, .link:hover {
     color: var(--col-link-text-hover);
 }
 
-pre,
-code {
-    background-color: var(--col-code-bg);
-    color: var(--col-code-text);
-    border-color: var(--col-secondary-text);
+@if $pre-code-colouring {
+    pre,
+    code {
+        background-color: var(--col-code-bg);
+        color: var(--col-code-text);
+        border-color: var(--col-secondary-text);
+    }
 }
 
 blockquote {
